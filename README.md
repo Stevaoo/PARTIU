@@ -2,7 +2,10 @@
 
 ## 1. Objetivo da Aplicação
 Descreva o propósito da aplicação. Qual problema ela resolve? Quem são os usuários-alvo?
-- **Exemplo**: Desenvolver uma plataforma de comunicação entre usuários (pen pals), permitindo o envio de mensagens com desenhos para outros usuários aleatórios na base de dados.
+Descreva o propósito da aplicação - Facilitar a vida do turista e proporcionar uma experiência de viagem incrível
+Qual problema ela resolve? Poupatempo. desconhecimento geográfico
+Quem são os usuários-alvo?  Turistas em geral ou até Pessoas locais 
+
 
 ---
 
@@ -28,18 +31,17 @@ Liste as principais funcionalidades que a aplicação deve oferecer.
 
 ## 3. Requisitos Não Funcionais
 Estes são os aspectos que afetam o desempenho, a segurança e a experiência geral da aplicação.
-
-- **Performance**:
+- Performance:
   - Tempo de resposta de até 2 segundos para ações de envio de mensagens.
-  - Suporte a até 1000 usuários simultâneos.
+  - Suporte a até 5000 usuários simultâneos.
 
-- **Segurança**:
+- Segurança:
   - Criptografia de senhas.
   - Controle de acesso seguro para usuários e administradores.
   - Proteção contra ataques comuns (ex.: SQL Injection, XSS).
 
-- **Compatibilidade**:
-  - Compatível com os principais navegadores (Chrome, Firefox, Safari, Edge).
+- Compatibilidade:
+  - Compatível com os principais navegadores (Chrome, Opera, Safari, Edge).
   - Responsividade para dispositivos móveis e desktops.
 
 ---
