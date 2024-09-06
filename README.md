@@ -198,10 +198,10 @@ Defina um cronograma com as fases do projeto e estimativas de tempo para cada et
 ## 9. Equipe
 Liste as pessoas responsáveis por cada área do projeto.
 
-- **Gestor de Projeto**: Nome da pessoa responsável pela gestão do projeto.
-- **Desenvolvedor Backend**: Nome da pessoa responsável pelo backend.
-- **Desenvolvedor Frontend**: Nome da pessoa responsável pelo frontend.
-- **Designer UX/UI**: Nome da pessoa responsável pelo design.
+- **Gestor de Projeto**: Stevão Rodrigues.
+- **Desenvolvedor Backend**: Leandro Guariniri.
+- **Desenvolvedor Frontend**: Matheus Mattos e Lucas Florão.
+- **Designer UX/UI**: Pedro Nunes.
 
 ---
 
