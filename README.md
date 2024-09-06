@@ -184,6 +184,7 @@ Liste ferramentas ou links de protótipos visuais que mostram como será o layou
 
 ## 8. Cronograma de Desenvolvimento
 Defina um cronograma com as fases do projeto e estimativas de tempo para cada etapa.
+
 | Fase                      | Descrição                                    | Tempo Estimado       |
 |-------------------------------------------------------------------------------------------------|
 |                           |Definição de requisitos do sistema, análise   |                      |
