@@ -140,6 +140,17 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | preço         | Varchar(50) | Preço da atividade                 |
 | data_hora     | DATETIME    | Data e hora de criação do registro |
 
+Tabela: restaurantes
+| Campo         | Tipo        | Descrição                            |
+|----------------|--------------|------------------------------------|
+| restaurante_id | INT          | Identificador único da             |
+| nome           | Varchar      | Nome do Restaurante                |
+| tipo_culinaria | Varchar      | Tipo culinaria                     |
+| local          | Vachar       | Endereço do restaurante            |
+| preço_faixa    | Varchar      | Faixa de preço                     |
+| avaliaçao      | DECIMAL(2,1) | Avaliação média (0-5)              |
+| enviado_em     | DATETIME     | Data de envio                      |
+
 ---
 
 ## 7. Protótipos Visuais
