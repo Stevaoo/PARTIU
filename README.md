@@ -120,24 +120,25 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 
 ### Exemplo: Tabela de Usuários
 
-| Campo      | Tipo       | Descrição                            |
-|------------|------------|--------------------------------------|
-| id         | INT        | Identificador único do usuário       |
-| nome       | VARCHAR(50)| Nome do usuário                      |
-| email      | VARCHAR(100)| Email do usuário                    |
-| senha      | VARCHAR(255)| Senha criptografada                 |
-| criado_em  | DATETIME   | Data de criação do usuário           |
+| Campo      | Tipo        | Descrição                            |
+|------------|-------------|--------------------------------------|
+| usuario_id | INT         | Identificador único do usuário       |
+| nome       | VARCHAR(50) | Nome do usuário                      |
+| email      | VARCHAR(100)| Email do usuário                     |
+| senha      | VARCHAR(255)| Senha criptografada                  |
+| data_nasc  | DATETIME    | Data de nascimento do usuário        |
+| data_hora  | DATETIME    | Data e hora de criação do registro   |
 
 ### Exemplo: Tabela de Atividades
 
 | Campo         | Tipo        | Descrição                          |
 |---------------|-------------|------------------------------------|
-| id            | INT         | Identificador único da mensagem    |
-| descrição     | Varchar     | ID do usuário remetente            |
-| destinatario_id | INT       | ID do usuário destinatário         |
-| conteúdo      | TEXT        | Texto da mensagem                  |
-| desenho       | BLOB        | Desenho enviado (opcional)         |
-| enviado_em    | DATETIME    | Data de envio                      |
+| atividade_id  | INT         | Identificador único da atividade   |
+| nome          | INT         | Nome da atividade                  |
+| descrição     | TEXT        | Descrição da atividade             |
+| local         | Varchar(100)| Local da atividade                 |
+| preço         | Varchar(50) | Preço da atividade                 |
+| data_hora     | DATETIME    | Data e hora de criação do registro |
 
 ---
 
