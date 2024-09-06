@@ -118,7 +118,7 @@ Para utilizar essas APIs externas, você precisará configurar chaves de API (AP
 ## 6. Modelo de Dados
 Defina as tabelas ou coleções que serão usadas no banco de dados.
 
-### Exemplo: Tabela de Usuários
+### Tabela de Usuários
 
 | Campo      | Tipo        | Descrição                            |
 |------------|-------------|--------------------------------------|
@@ -129,7 +129,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | data_nasc  | DATETIME    | Data de nascimento do usuário        |
 | data_hora  | DATETIME    | Data e hora de criação do registro   |
 
-### Exemplo: Tabela de Atividades
+### Tabela de Atividades
 
 | Campo         | Tipo        | Descrição                          |
 |---------------|-------------|------------------------------------|
@@ -140,7 +140,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | preço         | Varchar(50) | Preço da atividade                 |
 | data_hora     | DATETIME    | Data e hora de criação do registro |
 
-Tabela: restaurantes
+### Tabela: restaurantes
 | Campo         | Tipo        | Descrição                            |
 |----------------|--------------|------------------------------------|
 | restaurante_id | INT          | Identificador único da             |
@@ -150,6 +150,17 @@ Tabela: restaurantes
 | preço_faixa    | Varchar      | Faixa de preço                     |
 | avaliaçao      | DECIMAL(2,1) | Avaliação média (0-5)              |
 | enviado_em     | DATETIME     | Data de envio                      |
+
+### Tabela de Hotéis
+| Campo                 | Tipo        | Descrição                          |
+|-----------------------|-------------|------------------------------------|
+| hotel_id              | INT         | Identificador único do hotél       |
+| nome                  | Varchar(50) | Nome do hotél                      |
+| endereco              | Varchar(200)| Endereco do hotél                  |
+| classificacao_estrela | Varchar(100)| Classificacao por estrelas do hotel|
+| preco_noite           | Varchar(50) | Preço por noite do hotél           |
+| data_hora             | Varchar(100)| Data e hora de criação do registro |
+
 
 ---
 
