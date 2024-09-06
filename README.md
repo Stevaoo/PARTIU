@@ -126,12 +126,12 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | senha      | VARCHAR(255)| Senha criptografada                 |
 | criado_em  | DATETIME   | Data de criação do usuário           |
 
-### Exemplo: Tabela de Mensagens
+### Exemplo: Tabela de Atividades
 
 | Campo         | Tipo        | Descrição                          |
 |---------------|-------------|------------------------------------|
 | id            | INT         | Identificador único da mensagem    |
-| remetente_id  | INT         | ID do usuário remetente            |
+| descrição     | Varchar     | ID do usuário remetente            |
 | destinatario_id | INT       | ID do usuário destinatário         |
 | conteúdo      | TEXT        | Texto da mensagem                  |
 | desenho       | BLOB        | Desenho enviado (opcional)         |
