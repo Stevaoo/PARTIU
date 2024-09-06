@@ -118,7 +118,7 @@ Para utilizar essas APIs externas, você precisará configurar chaves de API (AP
 ## 6. Modelo de Dados
 Defina as tabelas ou coleções que serão usadas no banco de dados.
 
-## Tabela de Usuários
+## Tabela: Usuários
 | Campo      | Tipo        | Descrição                            |
 |------------|-------------|--------------------------------------|
 | usuario_id | INT         | Identificador único do usuário       |
@@ -128,7 +128,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | data_nasc  | DATE        | Data de nascimento do usuário        |
 | data_hora  | VARCHAR     | Data e hora de criação do registro   |
 
-## Tabela de Atividades
+## Tabela: Atividades
 | Campo         | Tipo        | Descrição                          |
 |---------------|-------------|------------------------------------|
 | atividade_id  | INT         | Identificador único da atividade   |
@@ -139,7 +139,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | data_hora     | Varchar(50) | Data e hora de criação do registro |
 
 
-## Tabela: restaurantes
+## Tabela: Restaurantes
 | Campo         | Tipo        | Descrição                            |
 |----------------|--------------|------------------------------------|
 | restaurante_id | INT          | Identificador único da             |
@@ -150,7 +150,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | avaliaçao      | DECIMAL(2,1) | Avaliação média (0-5)              |
 | enviado_em     | Varchar(50)  | Data de envio                      |
 
-### Tabela de Hotéis
+## Tabela: Hotéis
 | Campo       | Tipo        | Descrição                          |
 |-------------|-------------|------------------------------------|
 | hotel_id    | INT         | Identificador único do hotél       |
