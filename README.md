@@ -59,7 +59,7 @@ Defina as tecnologias que serão utilizadas, tanto no frontend quanto no backend
   - APIs: REST (ou GraphQL).
 
 - **Banco de Dados**:
-  - Tipo: Relacional (MySQL ou PostgreSQL) ou NoSQL (MongoDB).
+  - Tipo: Relacional (MySQL).
   - Estrutura: Tabelas ou coleções para usuários, mensagens, etc.
 
 - **Hospedagem e Infraestrutura**:
@@ -184,15 +184,32 @@ Liste ferramentas ou links de protótipos visuais que mostram como será o layou
 
 ## 8. Cronograma de Desenvolvimento
 Defina um cronograma com as fases do projeto e estimativas de tempo para cada etapa.
-
-| Fase                      | Descrição                                  | Tempo Estimado       |
-|----------------------------|--------------------------------------------|----------------------|
-| Planejamento                | Definição de requisitos e arquitetura      | 1 semana             |
-| Desenvolvimento do Backend  | Implementação das APIs e banco de dados    | 3 semanas            |
-| Desenvolvimento do Frontend | Implementação do frontend e integração     | 3 semanas            |
-| Testes                      | Testes funcionais e ajustes                | 1 semana             |
-| Implantação                 | Deploy da aplicação em ambiente de produção| 1 semana             |
-
+| Fase                      | Descrição                                    | Tempo Estimado       |
+|-------------------------------------------------------------------------------------------------|
+|                           |Definição de requisitos do sistema, análise   |                      |
+|                           | de viabilidade, pesquisa de APIs externas    |      3 Semanas       |
+|      Planejamento         | (mapas, clima), e elaboração da arquitetura  |                      |
+|                           | do sistema.                                  |                      |
+|-------------------------------------------------------------------------------------------------|
+|                           |Implementação das APIs para gerenciamento de  |                      |  
+|                           | roteiros, integração com APIs externas       |                      |
+|     Desenvolvimento do    | (mapas, clima), configuração do banco de     |      2 Meses         | 
+|           Backend         | dados e lógica de negócios.                  |                      | 
+|-------------------------------------------------------------------------------------------------|
+|                           |Criação da interface do usuário para a        |                      |
+|                           | criação e visualização de roteiros,          |                      |
+|     Desenvolvimento do    | integração com o backend, e implementação    |      2 Meses         |
+|          Frontend         | de funcionalidades como mapas e              |                      | 
+|                           | previsão do tempo.                           |                      |
+|-------------------------------------------------------------------------------------------------|
+|                           | Testes funcionais, testes de integração com  |                      |
+|         Testes            |  APIs externas, testes de usabilidade,       |      3 Semanas       |
+|                           |  e correção de bugs.                         |                      |
+|-------------------------------------------------------------------------------------------------| 
+|                           | Deploy da aplicação em ambiente de produção, |                      |
+|        Implantação        |  configuração dos servidores, e              |      2 Semanas       |
+|                           |  monitoramento inicial.                      |                      |
+|-------------------------------------------------------------------------------------------------|
 ---
 
 ## 9. Equipe
