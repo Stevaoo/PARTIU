@@ -186,31 +186,13 @@ Liste ferramentas ou links de protótipos visuais que mostram como será o layou
 Defina um cronograma com as fases do projeto e estimativas de tempo para cada etapa.
 
 | Fase                      | Descrição                                    | Tempo Estimado       |
-|-------------------------------------------------------------------------------------------------|
-|                           |Definição de requisitos do sistema, análise   |                      |
-|                           | de viabilidade, pesquisa de APIs externas    |      3 Semanas       |
-|      Planejamento         | (mapas, clima), e elaboração da arquitetura  |                      |
-|                           | do sistema.                                  |                      |
-|-------------------------------------------------------------------------------------------------|
-|                           |Implementação das APIs para gerenciamento de  |                      |  
-|                           | roteiros, integração com APIs externas       |                      |
-|     Desenvolvimento do    | (mapas, clima), configuração do banco de     |      2 Meses         | 
-|           Backend         | dados e lógica de negócios.                  |                      | 
-|-------------------------------------------------------------------------------------------------|
-|                           |Criação da interface do usuário para a        |                      |
-|                           | criação e visualização de roteiros,          |                      |
-|     Desenvolvimento do    | integração com o backend, e implementação    |      2 Meses         |
-|          Frontend         | de funcionalidades como mapas e              |                      | 
-|                           | previsão do tempo.                           |                      |
-|-------------------------------------------------------------------------------------------------|
-|                           | Testes funcionais, testes de integração com  |                      |
-|         Testes            |  APIs externas, testes de usabilidade,       |      3 Semanas       |
-|                           |  e correção de bugs.                         |                      |
-|-------------------------------------------------------------------------------------------------| 
-|                           | Deploy da aplicação em ambiente de produção, |                      |
-|        Implantação        |  configuração dos servidores, e              |      2 Semanas       |
-|                           |  monitoramento inicial.                      |                      |
-|-------------------------------------------------------------------------------------------------|
+|---------------------------|----------------------------------------------|----------------------|
+| **Planejamento**           | Definição de requisitos do sistema, análise de viabilidade, pesquisa de APIs externas (mapas, clima), e elaboração da arquitetura do sistema. | 3 Semanas            |
+| **Desenvolvimento do Backend** | Implementação das APIs para gerenciamento de roteiros, integração com APIs externas (mapas, clima), configuração do banco de dados e lógica de negócios. | 2 Meses              |
+| **Desenvolvimento do Frontend** | Criação da interface do usuário para a criação e visualização de roteiros, integração com o backend, e implementação de funcionalidades como mapas e previsão do tempo. | 2 Meses              |
+| **Testes**                 | Testes funcionais, testes de integração com APIs externas, testes de usabilidade, e correção de bugs. | 3 Semanas            |
+| **Implantação**            | Deploy da aplicação em ambiente de produção, configuração dos servidores, e monitoramento inicial. | 2 Semanas            |
+
 ---
 
 ## 9. Equipe
