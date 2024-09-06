@@ -152,14 +152,14 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | enviado_em     | DATETIME     | Data de envio                      |
 
 ### Tabela de Hotéis
-| Campo                 | Tipo        | Descrição                          |
-|-----------------------|-------------|------------------------------------|
-| hotel_id              | INT         | Identificador único do hotél       |
-| nome                  | Varchar(50) | Nome do hotél                      |
-| endereco              | Varchar(200)| Endereco do hotél                  |
-| classificacao_estrela | Varchar(100)| Classificacao por estrelas do hotel|
-| preco_noite           | Varchar(50) | Preço por noite do hotél           |
-| data_hora             | Varchar(100)| Data e hora de criação do registro |
+| Campo       | Tipo        | Descrição                          |
+|-------------|-------------|------------------------------------|
+| hotel_id    | INT         | Identificador único do hotél       |
+| nome        | Varchar(50) | Nome do hotél                      |
+| endereco    | Varchar(200)| Endereco do hotél                  |
+| avaliacao   | Varchar(100)| Avaliação média (0-5)              |
+| preco_noite | Varchar(50) | Preço por noite do hotél           |
+| data_hora   | Varchar(100)| Data e hora de criação do registro |
 
 
 ---
