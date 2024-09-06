@@ -118,19 +118,17 @@ Para utilizar essas APIs externas, você precisará configurar chaves de API (AP
 ## 6. Modelo de Dados
 Defina as tabelas ou coleções que serão usadas no banco de dados.
 
-### Tabela de Usuários
-
+##Tabela de Usuários
 | Campo      | Tipo        | Descrição                            |
 |------------|-------------|--------------------------------------|
 | usuario_id | INT         | Identificador único do usuário       |
 | nome       | VARCHAR(50) | Nome do usuário                      |
 | email      | VARCHAR(100)| Email do usuário                     |
 | senha      | VARCHAR(255)| Senha criptografada                  |
-| data_nasc  | DATETIME    | Data de nascimento do usuário        |
-| data_hora  | DATETIME    | Data e hora de criação do registro   |
+| data_nasc  | DATE        | Data de nascimento do usuário        |
+| data_hora  | VARCHAR     | Data e hora de criação do registro   |
 
-### Tabela de Atividades
-
+##Tabela de Atividades
 | Campo         | Tipo        | Descrição                          |
 |---------------|-------------|------------------------------------|
 | atividade_id  | INT         | Identificador único da atividade   |
@@ -138,18 +136,19 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | descrição     | TEXT        | Descrição da atividade             |
 | local         | Varchar(100)| Local da atividade                 |
 | preço         | Varchar(50) | Preço da atividade                 |
-| data_hora     | DATETIME    | Data e hora de criação do registro |
+| data_hora     | Varchar(50) | Data e hora de criação do registro |
 
-### Tabela: restaurantes
+
+##Tabela: restaurantes
 | Campo         | Tipo        | Descrição                            |
 |----------------|--------------|------------------------------------|
 | restaurante_id | INT          | Identificador único da             |
-| nome           | Varchar      | Nome do Restaurante                |
-| tipo_culinaria | Varchar      | Tipo culinaria                     |
-| local          | Vachar       | Endereço do restaurante            |
-| preço_faixa    | Varchar      | Faixa de preço                     |
+| nome           | Varchar(100) | Nome do Restaurante                |
+| tipo_culinaria | Varchar(200) | Tipo culinaria                     |
+| local          | Varchar(300) | Endereço do restaurante            |
+| preço_faixa    | Varchar(50)  | Faixa de preço                     |
 | avaliaçao      | DECIMAL(2,1) | Avaliação média (0-5)              |
-| enviado_em     | DATETIME     | Data de envio                      |
+| enviado_em     | Varchar(50)  | Data de envio                      |
 
 ### Tabela de Hotéis
 | Campo       | Tipo        | Descrição                          |
@@ -157,9 +156,20 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | hotel_id    | INT         | Identificador único do hotél       |
 | nome        | Varchar(50) | Nome do hotél                      |
 | endereco    | Varchar(200)| Endereco do hotél                  |
-| avaliacao   | Varchar(100)| Avaliação média (0-5)              |
+| avaliacao   | DECIMAL(2,1)| Avaliação média (0-5)              |
 | preco_noite | Varchar(50) | Preço por noite do hotél           |
 | data_hora   | Varchar(100)| Data e hora de criação do registro |
+
+##Tabela: Avaliação
+| Campo         | Tipo        | Descrição                            |
+|----------------|--------------|------------------------------------|
+| avaliacao_id   | INT          | Identificador único da avaliaçao   |
+| usuario_id     | INT          | Identificador do usuário           |
+| tipo_item      | Varchar(100) | Tipo do item avaliado              |
+| avalia_item    | Vachar(100)  | Identificador do item avaliado     |
+| nota_user      | DECIMAL(2,1) | Nota dada pelo usuário             |
+| comentarios    | TEXT         | Comentário do usuário              |
+| enviado_em     | TEXT         | Data de criação  avaliação         |
 
 
 ---
