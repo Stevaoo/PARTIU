@@ -121,7 +121,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 ## Tabela: Usuários
 | Campo      | Tipo        | Descrição                            |
 |------------|-------------|--------------------------------------|
-| usuario_id | INT         | Identificador único do usuário       |
+| id_usuario | INT         | Identificador único do usuário       |
 | nome       | VARCHAR(50) | Nome do usuário                      |
 | email      | VARCHAR(100)| Email do usuário                     |
 | senha      | VARCHAR(255)| Senha criptografada                  |
@@ -131,7 +131,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 ## Tabela: Atividades
 | Campo         | Tipo        | Descrição                          |
 |---------------|-------------|------------------------------------|
-| atividade_id  | INT         | Identificador único da atividade   |
+| id_atividade  | INT         | Identificador único da atividade   |
 | nome          | INT         | Nome da atividade                  |
 | descrição     | TEXT        | Descrição da atividade             |
 | local         | Varchar(100)| Local da atividade                 |
@@ -142,7 +142,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 ## Tabela: Restaurantes
 | Campo         | Tipo        | Descrição                            |
 |----------------|--------------|------------------------------------|
-| restaurante_id | INT          | Identificador único da             |
+| id_restaurante | INT          | Identificador único da             |
 | nome           | Varchar(100) | Nome do Restaurante                |
 | tipo_culinaria | Varchar(200) | Tipo culinaria                     |
 | local          | Varchar(300) | Endereço do restaurante            |
@@ -153,7 +153,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 ## Tabela: Hotéis
 | Campo       | Tipo        | Descrição                          |
 |-------------|-------------|------------------------------------|
-| hotel_id    | INT         | Identificador único do hotél       |
+| id_hotel    | INT         | Identificador único do hotél       |
 | nome        | Varchar(50) | Nome do hotél                      |
 | endereco    | Varchar(200)| Endereco do hotél                  |
 | avaliacao   | DECIMAL(2,1)| Avaliação média (0-5)              |
@@ -163,8 +163,8 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 ## Tabela: Avaliação
 | Campo         | Tipo        | Descrição                            |
 |----------------|--------------|------------------------------------|
-| avaliacao_id   | INT          | Identificador único da avaliaçao   |
-| usuario_id     | INT          | Identificador do usuário           |
+| id_avaliacao   | INT          | Identificador único da avaliaçao   |
+| id_usuario     | INT          | Identificador do usuário           |
 | tipo_item      | Varchar(100) | Tipo do item avaliado              |
 | avalia_item    | Vachar(100)  | Identificador do item avaliado     |
 | nota_user      | DECIMAL(2,1) | Nota dada pelo usuário             |
