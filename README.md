@@ -18,14 +18,15 @@ Liste as principais funcionalidades que a aplicação deve oferecer.
   - Recuperação de senha.
 
 - **Funcionalidades para Usuários**:
-  - Criar e enviar mensagens.
-  - Enviar desenhos juntamente com as mensagens.
-  - Receber mensagens aleatórias de outros usuários.
-  - Editar perfil e preferências.
+  - Hospedagem
+  - Hoteis
+  - Restaurantes
+  - Atividades em Geral
 
 - **Administração**:
   - Gerenciar usuários.
-  - Monitorar atividades.
+  - Monitorar atividades
+  - Atualizar o site semanalmente.
 
 ---
 
