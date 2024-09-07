@@ -136,7 +136,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | id_atividade  | INT          | Identificador único da atividade   |
 | nome          | INT          | Nome da atividade                  |
 | descricao     | TEXT         | Descrição da atividade             |
-| local         | VARCHAR(100) | Local da atividade                 |
+| endereco      | VARCHAR(100) | Local da atividade                 |
 | preco         | DECIMAL(10,2)| Preço da atividade                 |
 | data_hora     | VARCHAR(50)  | Data e hora de criação do registro |
 
