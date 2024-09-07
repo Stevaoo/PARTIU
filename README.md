@@ -183,8 +183,9 @@ Liste ferramentas ou links de protótipos visuais que mostram como será o layou
  - https://www.turismo.rs.gov.br/turismo/roteiro 
 
 
-- **Figma**: Link para os protótipos do frontend.
-- **Wireframes**: Desenhos simples de como as páginas principais serão organizadas.
+ **Figma**: Link para os protótipos do frontend.
+ 
+ **Wireframes**: Desenhos simples de como as páginas principais serão organizadas.
 
 ---
 
