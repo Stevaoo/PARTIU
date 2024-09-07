@@ -175,8 +175,10 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 ---
 ## 7. Protótipos Visuais
 Liste ferramentas ou links de protótipos visuais que mostram como será o layout da aplicação.
-     - https://www.booking.com/?aid=348858&label=pc-br-booking-booking-sd-ab - MODELO AVANÇADO
-     - https://www.turismo.rs.gov.br/turismo/roteiro - MODELO INICIANTE/INTERMEDIARIO
+**MODELO AVANÇADO**
+   - https://www.booking.com/?aid=348858&label=pc-br-booking-booking-sd-ab
+**MODELO INICIANTE/INTERMEDIARIO**
+   - https://www.turismo.rs.gov.br/turismo/roteiro 
 
 
 - **Figma**: Link para os protótipos do frontend.
