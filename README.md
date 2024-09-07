@@ -168,7 +168,6 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | id_usuario     | INT          | Identificador do usuário           |
 | tipo_item      | VARCHAR(100) | Tipo do item avaliado              |
 | avalia_item    | VARCHAR(100) | Identificador do item avaliado     |
-| nota_user      | DECIMAL(2,1) | Nota dada pelo usuário             |
 | comentarios    | TEXT         | Comentário do usuário              |
 | enviado_em     | TEXT         | Data de criação  avaliação         |
 
