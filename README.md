@@ -26,7 +26,7 @@ Liste as principais funcionalidades que a aplicação deve oferecer.
 - **Administração**:
   - Gerenciar usuários.
   - Monitorar atividades
-  - Atualizar o site semanalmente.
+  - Atualizar o site mensalmente.
 
 ---
 
