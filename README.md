@@ -85,25 +85,26 @@ Estas são as APIs que a aplicação vai fornecer para que o frontend se comuniq
 ### 5.2 APIs de Terceiros (Externas)
 Estas são APIs de serviços externos que sua aplicação vai consumir para adicionar funcionalidades ou melhorar a experiência do usuário. Algumas APIs populares que podem ser utilizadas:
 
-- **API de Autenticação** (ex.: Auth0, Firebase Auth):
-  - Usada para gerenciar o login de usuários de forma segura.
-  - **URL**: `https://auth0.com/docs/api`
-  - **Função**: Facilitar a autenticação sem a necessidade de implementar do zero.
-  
-- **API de Armazenamento de Arquivos** (ex.: AWS S3, Firebase Storage):
-  - Usada para armazenar imagens ou arquivos, como os desenhos enviados pelos usuários.
-  - **URL**: `https://docs.aws.amazon.com/s3/index.html`
-  - **Função**: Permitir que a aplicação armazene grandes arquivos em um ambiente externo, escalável e seguro.
+## Google Maps API
+- **Funcionalidade**: Permite a integração de mapas, pesquisa de locais, rotas, direções e visualização de pontos de interesse.
+- **Função**: Ideal para exibir mapas interativos, calcular rotas para atividades ou restaurantes, e encontrar locais próximos.
+- **URL**: [Google Maps API](https://developers.google.com/maps/apis-by-platform?hl=pt-br)
 
-- **API de Envio de Emails** (ex.: SendGrid, Mailgun):
-  - Usada para enviar emails de confirmação, recuperação de senha, etc.
-  - **URL**: `https://sendgrid.com/docs/for-developers/sending-email/api-getting-started/`
-  - **Função**: Gerenciar o envio de emails automáticos sem a necessidade de um servidor de emails próprio.
+## OpenWeatherMap API
+- **Funcionalidade**: Fornece informações sobre a previsão do tempo e clima em tempo real.
+- **Função**: Muito útil para oferecer previsões meteorológicas para atividades externas ou ao planejar roteiros em diferentes cidades.
+- **URL**: [OpenWeatherMap API](https://www.meteoblue.com/weather-api)
 
-- **API de Geolocalização** (ex.: Google Maps API):
-  - Usada para exibir a localização de usuários, ou verificar a localização de quem envia ou recebe mensagens.
-  - **URL**: `https://developers.google.com/maps/documentation`
-  - **Função**: Adicionar mapas e localização à aplicação.
+## TripAdvisor API
+- **Funcionalidade**: Fornece dados sobre destinos, hotéis, restaurantes e pontos turísticos, além de avaliações de usuários.
+- **Função**: Para mostrar recomendações de atividades e hotéis baseadas em avaliações de viajantes.
+- **URL**: [TripAdvisor API](https://developer-tripadvisor.com/content-api/)
+
+## Booking.com API
+- **Funcionalidade**: Fornece dados sobre hotéis e acomodações, incluindo disponibilidade e avaliações.
+- **Função**: Para facilitar a busca e reserva de hotéis diretamente no aplicativo.
+- **URL**: [Booking.com API](https://developers.booking.com)
+
 
 ### 5.3 Integração com APIs de Terceiros
 Para utilizar essas APIs externas, você precisará configurar chaves de API (API keys), que são credenciais para acessar esses serviços de forma segura. Cada serviço geralmente oferece documentação detalhada sobre como integrar a API ao seu sistema.
