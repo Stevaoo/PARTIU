@@ -133,11 +133,11 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | Campo         | Tipo         | Descrição                          |
 |---------------|--------------|------------------------------------|
 | id_atividade  | INT          | Identificador único da atividade   |
-| nome          | INT          | Nome da atividade                  |
+| tipo_atividade| INT          | Nome da atividade                  |
 | descricao     | TEXT         | Descrição da atividade             |
 | endereco      | VARCHAR(100) | Local da atividade                 |
 | preco         | DECIMAL(10,2)| Preço da atividade                 |
-| data_hora     | VARCHAR(50)  | Data e hora de criação do registro |
+| data_atividade| VARCHAR(50)  | Data e hora de criação do registro |
 
 
 ## Tabela: Restaurantes
@@ -145,11 +145,11 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 |----------------|--------------|------------------------------------|
 | id_restaurante | INT          | Identificador único da             |
 | nome           | VARCHAR(100) | Nome do Restaurante                |
-| tipo_culinaria | VARCHAR(200) | Tipo culinaria                     |
+| culinaria      | VARCHAR(200) | Tipo culinaria                     |
 | endereco       | VARCHAR(300) | Endereço do restaurante            |
 | preco_faixa    | VARCHAR(50)  | Faixa de preço                     |
 | avaliacao      | DECIMAL(2,1) | Avaliação média (0-5)              |
-| enviado_em     | VARCHAR(50)  | Data de envio                      |
+| telefone       | VARCHAR(11)  | Data de envio                      |
 
 ## Tabela: Hotéis
 | Campo       | Tipo        | Descrição                          |
@@ -158,18 +158,18 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | nome        | VARCHAR(50) | Nome do hotél                      |
 | endereco    | VARCHAR(200)| Endereco do hotél                  |
 | avaliacao   | DECIMAL(2,1)| Avaliação média (0-5)              |
-| preco_noite | VARCHAR(50) | Preço por noite do hotél           |
+| preco       | VARCHAR(50) | Preço por noite do hotél           |
 | data_hora   | VARCHAR(100)| Data e hora de criação do registro |
 
 ## Tabela: Avaliação
-| Campo         | Tipo        | Descrição                            |
+| Campo          | Tipo         | Descrição                          |
 |----------------|--------------|------------------------------------|
 | id_avaliacao   | INT          | Identificador único da avaliaçao   |
 | id_usuario     | INT          | Identificador do usuário           |
-| tipo_item      | VARCHAR(100) | Tipo do item avaliado              |
-| avalia_item    | VARCHAR(100) | Identificador do item avaliado     |
+| tipo_avaliacao | VARCHAR(100) | Tipo do item avaliado              |
+| avaliaacao     | VARCHAR(100) | Identificador do item avaliado     |
 | comentarios    | TEXT         | Comentário do usuário              |
-| enviado_em     | TEXT         | Data de criação  avaliação         |
+| data_avaliacao | DATE         | Data de criação da avaliação       |
 
 
 ---
