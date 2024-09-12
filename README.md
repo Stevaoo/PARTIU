@@ -161,13 +161,13 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | preco       | VARCHAR(50) | Preço por noite do hotél           |
 | data_hora   | VARCHAR(100)| Data e hora de criação do registro |
 
-## Tabela: Avaliação
+## Tabela: Avaliações
 | Campo          | Tipo         | Descrição                          |
 |----------------|--------------|------------------------------------|
 | id_avaliacao   | INT          | Identificador único da avaliaçao   |
 | id_usuario     | INT          | Identificador do usuário           |
 | tipo_avaliacao | VARCHAR(100) | Tipo do item avaliado              |
-| avaliaacao     | VARCHAR(100) | Identificador do item avaliado     |
+| avaliacao     | VARCHAR(100) | Identificador do item avaliado     |
 | comentarios    | TEXT         | Comentário do usuário              |
 | data_avaliacao | DATE         | Data de criação da avaliação       |
 
