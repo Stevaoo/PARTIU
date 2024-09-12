@@ -53,3 +53,39 @@ export class Restaurante {
         this.telefone = telefone;
     }
 }
+
+export class Hoteis {
+    private id_hotel: number;
+    public nome: string;
+    public endereco: string;
+    public avaliacao: string;
+    public preco: number;
+    public data_hora:string;
+
+    constructor(id_hotel: number, nome: string, endereco: string, avaliacao: string, preco: number, data_hora: string){
+        this.id_hotel = id_hotel;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.avaliacao = avaliacao;
+        this.preco = preco;
+        this.data_hora = data_hora;
+    }
+}
+
+export class Avaliacao {
+    private id_avaliacao: number;
+    private usuario: Usuario;
+    public tipo_avaliacao: string;
+    public avaliacao: string;
+    public comentarios: string;
+    public data_hora: number;
+
+    constructor(id_avaliacao: number, usuario: Usuario, tipo_avaliacao: string, avaliacao: string, comentarios: string, data_hora: number){
+        this.id_avaliacao = id_avaliacao;
+        this.usuario = usuario;
+        this.tipo_avaliacao = tipo_avaliacao;
+        this.avaliacao = avaliacao;
+        this.comentarios = comentarios;
+        this.data_hora = data_hora;
+    }
+}
