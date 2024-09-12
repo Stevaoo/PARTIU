@@ -52,6 +52,30 @@ export class Restaurante {
         this.avaliacao = avaliacao;
         this.telefone = telefone;
     }
+    pesquisarRestaurante(): void {
+    // Aqui vai a lógica que o método deve executar
+  }
+  
+verCardapio(): void {
+    // Aqui vai a lógica que o método deve executar
+  }
+
+buscarPromocoes(): void {
+    // Aqui vai a lógica que o método deve executar
+  }
+
+filtrarPrecos(): void {
+    // Aqui vai a lógica que o método deve executar
+  }
+
+buscarCulinaria(): void {
+    // Aqui vai a lógica que o método deve executar
+  }
+
+visualizarRestaurantes(): void {
+    // Aqui vai a lógica que o método deve executar
+  }
+  
 }
 
 export class Hoteis {
