@@ -167,9 +167,9 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | id_avaliacao   | INT          | Identificador único da avaliaçao   |
 | id_usuario     | INT          | Identificador do usuário           |
 | tipo_avaliacao | VARCHAR(100) | Tipo do item avaliado              |
-| avaliacao     | VARCHAR(100) | Identificador do item avaliado     |
+| avaliacao      | VARCHAR(100) | Identificador do item avaliado     |
 | comentarios    | TEXT         | Comentário do usuário              |
-| data_avaliacao | DATE         | Data de criação da avaliação       |
+| data_hora      | DATE         | Data de criação da avaliação       |
 
 
 ---
