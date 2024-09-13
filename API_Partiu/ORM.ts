@@ -186,6 +186,9 @@ export class Hoteis {
         this.preco = preco;
         this.data_hora = data_hora;
     }
+    vizualizarHotel(): void{}
+    buscarHotel(): void{}
+    reservarQuarto():void{}
 }
 
 export class Avaliacao {
