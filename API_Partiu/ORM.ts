@@ -52,6 +52,8 @@ export class Atividades {
         this.preco = preco;
         this.data_atividade = data_atiividade;
     }
+     vizualizarAvaliacoes(): void{}
+      avaliar(): void{}
 }
 
 export class Restaurante {
