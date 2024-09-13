@@ -1,4 +1,4 @@
-import { question } from "readline-sync";
+
 
 let ask  = require('readline-sync')
 
@@ -24,11 +24,11 @@ export class Usuario {
 
     criarConta(): void {
   
-        let perguntaNome: string = question('Nome: ')
-        let perguntaEmail = question('Email: ')
-        let perguntaSenha = question('Senha: ')
-        let perguntaConfirmaSenha = question('Confirmar senha: ')
-        let perguntaNasc = question('Data de Nascimento: ')
+        let perguntaNome: string = ask.question('Nome: ')
+        let perguntaEmail = ask.question('Email: ')
+        let perguntaSenha = ask.question('Senha: ')
+        let perguntaConfirmaSenha = ask.question('Confirmar senha: ')
+        let perguntaNasc = ask.question('Data de Nascimento: ')
 
        
         if(perguntaSenha === perguntaConfirmaSenha || perguntaNasc >= 18){
