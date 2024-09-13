@@ -1,3 +1,7 @@
+let ask = require('readline-sync')
+
+let armazenamento: any = []
+
 export class Usuario {
     private id_usuario: number;
     private nome: string;
@@ -14,6 +18,22 @@ export class Usuario {
         this.data_nasc = data_nasc;
         this.data_hora = data_hora;
     }
+    entrarConta(): void { };
+
+    criarConta(): void {
+
+        let perguntaNome: string = ask.question('Nome: ')
+        let perguntaEmail = ask.question('Email: ')
+        let perguntaSenha = ask.question('Senha: ')
+        let perguntaConfirmaSenha = ask.question('Confirmar senha: ')
+        let perguntaNasc = ask.question('Data de Nascimento: ')
+
+        if (perguntaSenha === perguntaConfirmaSenha || perguntaNasc >= 18) {
+            armazenamento.push(perguntaNome, perguntaEmail, perguntaSenha)
+        }
+    }
+    removerConta(): void {}
+    redefinirSenha(): void {};
 }
 
 export class Atividades {
