@@ -261,5 +261,4 @@ export class Avaliacao {
         }
         return false;
     }
-
 }
