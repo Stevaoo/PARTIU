@@ -165,9 +165,7 @@ export class Restaurante {
         Avaliação: ${this.avaliacao}
         Telefone; ${this.telefone}
         `);
-
     }
-
 }
 
 export class Hoteis {
