@@ -1,6 +1,8 @@
-let ask = require('readline-sync')
+import { log } from "console";
 
-let armazenamento: any = []
+export let ask = require('readline-sync')
+
+export let armazenamentoGeral: any = []
 
 export class Usuario {
     private id_usuario: number;
@@ -9,6 +11,7 @@ export class Usuario {
     private senha: number;
     public data_nasc: string;
     public data_hora: string;
+    protected armazenaUser: []
 
     constructor(id_usuario: number, nome: string, email: string, senha: number, data_nasc: string, data_hora: string) {
         this.id_usuario = id_usuario;
@@ -18,10 +21,21 @@ export class Usuario {
         this.data_nasc = data_nasc;
         this.data_hora = data_hora;
     }
-    entrarConta(): void { };
+    public entrarConta(): void {
+        let nome = ask.question("Insira o Nome do Titular da conta: ")
+        let senha = ask.questionInt("Insira a Senha da conta:  ")
+        if (nome === armazenamentoGeral && senha === armazenamentoGeral) {
+            console.log("Entrando na conta...");
+        } else if (nome === armazenamentoGeral && senha !== armazenamentoGeral) {
+            console.log("Senha Incorreta!!!");
+        } else if (nome !== armazenamentoGeral && senha === armazenamentoGeral) {
+            console.log("Nome Incorreto!!!");
+        } else {
+            console.log("Nome ou Senha Incorreto!");
+        }
+    }
 
-    criarConta(): void {
-
+    publiccriarConta(): void {
         let perguntaNome: string = ask.question('Nome: ')
         let perguntaEmail = ask.question('Email: ')
         let perguntaSenha = ask.question('Senha: ')
@@ -29,11 +43,13 @@ export class Usuario {
         let perguntaNasc = ask.question('Data de Nascimento: ')
 
         if (perguntaSenha === perguntaConfirmaSenha || perguntaNasc >= 18) {
-            armazenamento.push(perguntaNome, perguntaEmail, perguntaSenha)
+            armazenamentoGeral.push(perguntaNome, perguntaEmail, perguntaSenha)
         }
     }
-    removerConta(): void {}
-    redefinirSenha(): void {};
+
+    public removerConta(): void { }
+    public redefinirSenha(): void { };
+
 }
 
 export class Atividades {
@@ -43,7 +59,7 @@ export class Atividades {
     public endereco: string;
     public preco: number;
     public data_atividade: string;
-
+    protected armazenaAtividades: []
     constructor(id_atividade: number, tipo_atividade: string, descricao: string, endereco: string, preco: number, data_atiividade: string) {
         this.id_atividade = id_atividade;
         this.tipo_atividade = tipo_atividade;
@@ -52,8 +68,44 @@ export class Atividades {
         this.preco = preco;
         this.data_atividade = data_atiividade;
     }
-     vizualizarAvaliacoes(): void{}
-      avaliar(): void{}
+    public getIdAtividade(): number{
+        return this.id_atividade
+    }
+    public setIdAtividade(id_atividade: number): void{
+        this.id_atividade = id_atividade;
+    } 
+    public getTipoAtividade(): string{
+        return this.tipo_atividade;
+    }
+    public setTipoAtividade(tipo_atividade: string): void{
+        this.tipo_atividade = tipo_atividade;
+    }
+    public getDescricao(): string{
+        return this.descricao;
+    }
+    public setDescricao(descricao: string): void{
+        this.descricao = descricao;
+    }
+    public getEndereco(): string{
+        return this.endereco;
+    }
+    public setEndereco(endereco: string): void{
+        this.endereco = endereco;
+    }
+    public getPreco(): number{
+        return this.preco;
+    }
+    public setPreco(preco: number): void{
+        this.preco = preco;
+    } 
+    public getDataAtividade(): string{
+        return this.data_atividade;
+    }
+    public setDataAtividade(data_atiividade: string): void{
+        this.data_atividade = data_atiividade;
+    }
+    public vizualizarAvaliacoes(): void {}
+    public avaliar(): void {}
 }
 
 export class Restaurante {
@@ -64,7 +116,8 @@ export class Restaurante {
     public preco_faixa: number;
     public avaliacao: number;
     public telefone: string;
-    nome: any;
+    protected armazenaRestaurante: []
+    protected nome: any;
 
     constructor(id_restaurante: number, nome: string, culinaria: string, endereco: string, preco_faixa: number, avaliacao: number, telefone: string) {
         this.id_restaurante = id_restaurante;
@@ -76,46 +129,46 @@ export class Restaurante {
         this.telefone = telefone;
     }
 
-    getIdRestaurante(): number{
+    public getIdRestaurante(): number {
         return this.id_restaurante
     }
-    setIdRestaurante(id_restaurante: number): void{
+    public setIdRestaurante(id_restaurante: number): void {
         this.id_restaurante = id_restaurante;
     }
-    getNome(): string{
+    public getNome(): string {
         return this.nome;
     }
-    setNome(nome: string): void{
+    public setNome(nome: string): void {
         this.nome = nome
     }
-    getCulinaria(): string{
+    public getCulinaria(): string {
         return this.culinaria;
     }
-    setCulinaria(culinaria: string): void{
+    public setCulinaria(culinaria: string): void {
         this.culinaria = culinaria;
     }
-    getEndereco(): string{
-        return this.endereco 
+    public getEndereco(): string {
+        return this.endereco
     }
-    setEndereco(endereco: string): void{
+    public setEndereco(endereco: string): void {
         this.endereco = endereco;
     }
-    getPrecoFaixa(): number{
+    public getPrecoFaixa(): number {
         return this.preco_faixa;
     }
-    setPrecoFaixa(preco_faixa: number): void{
+    public setPrecoFaixa(preco_faixa: number): void {
         this.preco_faixa = preco_faixa
     }
-    getAvaliacao(): number{
+    public getAvaliacao(): number {
         return this.avaliacao
     }
-    setAvalicao(avaliacao: number): void{
+    public setAvalicao(avaliacao: number): void {
         this.avaliacao = avaliacao;
     }
-    getTelefone(): string{
+    public getTelefone(): string {
         return this.telefone;
     }
-    setTelefone(telefone: string): void{
+    public setTelefone(telefone: string): void {
         this.telefone = telefone;
     }
     public pesquisarRestaurante(nomeRestaurante: string): boolean {
@@ -157,7 +210,7 @@ export class Restaurante {
         console.log(`Restaurante ${this.nome} não oferece culinária ${culinariaBuscada}.`);
         return false;
     }
-    visualizarRestaurantes(): void {
+    public visualizarRestaurantes(): void {
         console.log(`
         Restaurante ID: ${this.id_restaurante}
         Nome Restaurante: ${this.nome}
@@ -176,7 +229,8 @@ export class Hoteis {
     public endereco: string;
     public avaliacao: string;
     public preco: number;
-    public data_hora: string;
+    public data_hora: string
+    public armazenaHotel: []
 
     constructor(id_hotel: number, nome: string, endereco: string, avaliacao: string, preco: number, data_hora: string) {
         this.id_hotel = id_hotel;
@@ -186,9 +240,9 @@ export class Hoteis {
         this.preco = preco;
         this.data_hora = data_hora;
     }
-    vizualizarHotel(): void{}
-    buscarHotel(): void{}
-    reservarQuarto():void{}
+    public vizualizarHotel(): void {}
+    public buscarHotel(): void {}
+    public reservarQuarto(): void {}
 }
 
 export class Avaliacao {
