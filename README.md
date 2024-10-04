@@ -115,7 +115,7 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 | email      | VARCHAR(100)| Email do usuário                     |
 | senha      | VARCHAR(255)| Senha criptografada                  |
 | data_nasc  | DATE        | Data de nascimento do usuário        |
-| data_hora  | TIMESTAMP   | Data e hora de criação do registro   |
+| data_hora  | DATE        | Data e hora de criação do registro   |
 
 ### Tabela: Atividades
 | Campo         | Tipo         | Descrição                          |
