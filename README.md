@@ -142,9 +142,10 @@ Defina as tabelas ou coleções que serão usadas no banco de dados.
 ## 7. Protótipos Visuais
 Liste ferramentas ou links de protótipos visuais que mostram como será o layout da aplicação.
 
-- **MODELO AVANÇADO**: [Booking.com](https://www.booking.com/?aid=348858&label=pc-br-booking-booking-sd-ab-htk-2023) 
-- **APP DE ORGANIZAÇÃO**: [TripAdvisor](https://www.tripadvisor.com/)
+- **MODELO AVANÇADO**: https://www.tripadvisor.com.br
+- **APP DE ORGANIZAÇÃO**: Packpoint
 - **SISTEMA DE GESTÃO**: [Google Maps](https://www.google.com/maps)
+- **IMG**: https://www.cnnbrasil.com.br/viagemegastronomia/viagem/dicas-e-aplicativos-para-ajudar-a-montar-a-mala-perfeita/
 
 ---
 
