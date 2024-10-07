@@ -145,7 +145,8 @@ Liste ferramentas ou links de protótipos visuais que mostram como será o layou
 - **MODELO AVANÇADO**: https://www.tripadvisor.com.br
 - **APP DE ORGANIZAÇÃO**: Packpoint
 - **SISTEMA DE GESTÃO**: [Google Maps](https://www.google.com/maps)
-- **IMG**: ![Captura de Tela (5)](https://github.com/user-attachments/assets/8e0b51ff-da5a-4ad4-817a-fb0307f71b9c)
+- **IMG**: ![Captura de Tela (5)](https://github.com/user-attachments/assets/28d71558-0ac8-4003-a048-6ff1e3a94b72)
+
 
 
 ---
