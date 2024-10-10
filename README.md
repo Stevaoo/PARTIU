@@ -116,7 +116,7 @@ Esta tabela armazena informações sobre os usuários que utilizam o sistema.
 | `email`      | VARCHAR(100)| Email do usuário                     |
 | `senha`      | VARCHAR(255)| Senha criptografada                  |
 | `data_nasc`  | DATE        | Data de nascimento do usuário        |
-| `data_hora`  | dateb       | Data e hora de criação do registro   |
+| `data_hora`  | date       | Data e hora de criação do registro   |
 
 ### Tabela: `Atividades`
 Esta tabela armazena detalhes das atividades que os usuários podem realizar durante as viagens.
