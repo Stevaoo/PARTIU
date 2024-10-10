@@ -1,5 +1,3 @@
-import { log } from "console";
-
 export let ask = require('readline-sync')
 
 export let armazenamentoGeral: any = []
@@ -20,6 +18,7 @@ export class Usuario {
         this.senha = senha;
         this.data_nasc = data_nasc;
         this.data_hora = data_hora;
+        this.armazenaUser = []
     }
     public entrarConta(): void {
         let nome = ask.question("Insira o Nome do Titular da conta: ")
@@ -35,7 +34,7 @@ export class Usuario {
         }
     }
 
-    publiccriarConta(): void {
+    public criarConta(): void {
         let perguntaNome: string = ask.question('Nome: ')
         let perguntaEmail = ask.question('Email: ')
         let perguntaSenha = ask.question('Senha: ')
@@ -47,8 +46,53 @@ export class Usuario {
         }
     }
 
-    public removerConta(): void { }
-    public redefinirSenha(): void { };
+    public removerConta(): void {
+        let nome = ask.question("Insira o Nome do Titular da conta que deseja remover: ");
+        let senha = ask.question("Insira a Senha da conta: ");
+    
+        let usuarioIndex = -1; // Inicializa o índice como -1
+    
+        // Para encontrar o índice do usuário
+        for (let i = 0; i < this.armazenaUser.length; i++) {
+            if (this.armazenaUser[i].nome === nome && this.armazenaUser[i].senha === senha) {
+                usuarioIndex = i; // Armazena o índice
+                break; // Encerra o loop se encontrar o usuário
+            }
+        }
+    
+        if (usuarioIndex !== -1) {
+            this.armazenaUser.splice(usuarioIndex, 1);
+            console.log("Conta removida com sucesso!");
+        } else {
+            console.log("Nome ou Senha incorretos! Verifique se estão corretos e tente novamente.");
+        }
+    }
+    
+
+    public redefinirSenha(): void {
+        let nome = ask.question("Insira o Nome do Titular da conta: ");
+        let senhaAntiga = ask.question("Insira a Senha Antiga: ");
+        let novaSenha = ask.question("Insira a Nova Senha: ");
+        let confirmaNovaSenha = ask.question("Confirme a Nova Senha: ");
+    
+        const usuario = this.armazenaUser.find(user => user.nome === nome);
+    
+        if (usuario) {
+            if (usuario.senha === senhaAntiga) {
+                if (novaSenha === confirmaNovaSenha) {
+                    usuario.senha = novaSenha; // Atualiza a senha
+                    console.log("Senha redefinida com sucesso!");
+                } else {
+                    console.log("As novas senhas não coincidem. Tente novamente.");
+                }
+            } else {
+                console.log("Senha antiga incorreta!");
+            }
+        } else {
+            console.log("Usuário não encontrado!");
+        }
+    }
+    
 
 }
 
@@ -68,186 +112,49 @@ export class Atividades {
         this.preco = preco;
         this.data_atividade = data_atiividade;
     }
-    public getIdAtividade(): number{
+    public getIdAtividade(): number {
         return this.id_atividade
     }
-    public setIdAtividade(id_atividade: number): void{
+    public setIdAtividade(id_atividade: number): void {
         this.id_atividade = id_atividade;
-    } 
-    public getTipoAtividade(): string{
+    }
+    public getTipoAtividade(): string {
         return this.tipo_atividade;
     }
-    public setTipoAtividade(tipo_atividade: string): void{
+    public setTipoAtividade(tipo_atividade: string): void {
         this.tipo_atividade = tipo_atividade;
     }
-    public getDescricao(): string{
+    public getDescricao(): string {
         return this.descricao;
     }
-    public setDescricao(descricao: string): void{
+    public setDescricao(descricao: string): void {
         this.descricao = descricao;
     }
-    public getEndereco(): string{
-        return this.endereco;
-    }
-    public setEndereco(endereco: string): void{
-        this.endereco = endereco;
-    }
-    public getPreco(): number{
-        return this.preco;
-    }
-    public setPreco(preco: number): void{
-        this.preco = preco;
-    } 
-    public getDataAtividade(): string{
-        return this.data_atividade;
-    }
-    public setDataAtividade(data_atiividade: string): void{
-        this.data_atividade = data_atiividade;
-    }
-    public vizualizarAvaliacoes(): void {}
-    public avaliar(): void {}
-}
-
-export class Restaurante {
-    private id_restaurante: number;
-    public nomeRestaurante: string;
-    public culinaria: string;
-    public endereco: string;
-    public preco_faixa: number;
-    public avaliacao: number;
-    public telefone: string;
-    protected armazenaRestaurante: []
-    protected nome: any;
-
-    constructor(id_restaurante: number, nome: string, culinaria: string, endereco: string, preco_faixa: number, avaliacao: number, telefone: string) {
-        this.id_restaurante = id_restaurante;
-        this.nomeRestaurante = nome;
-        this.culinaria = culinaria;
-        this.endereco = endereco;
-        this.preco_faixa = preco_faixa;
-        this.avaliacao = avaliacao;
-        this.telefone = telefone;
-    }
-
-    public getIdRestaurante(): number {
-        return this.id_restaurante
-    }
-    public setIdRestaurante(id_restaurante: number): void {
-        this.id_restaurante = id_restaurante;
-    }
-    public getNome(): string {
-        return this.nome;
-    }
-    public setNome(nome: string): void {
-        this.nome = nome
-    }
-    public getCulinaria(): string {
-        return this.culinaria;
-    }
-    public setCulinaria(culinaria: string): void {
-        this.culinaria = culinaria;
-    }
     public getEndereco(): string {
-        return this.endereco
+        return this.endereco;
     }
     public setEndereco(endereco: string): void {
         this.endereco = endereco;
     }
-    public getPrecoFaixa(): number {
-        return this.preco_faixa;
+    public getPreco(): number {
+        return this.preco;
     }
-    public setPrecoFaixa(preco_faixa: number): void {
-        this.preco_faixa = preco_faixa
-    }
-    public getAvaliacao(): number {
-        return this.avaliacao
-    }
-    public setAvalicao(avaliacao: number): void {
-        this.avaliacao = avaliacao;
-    }
-    public getTelefone(): string {
-        return this.telefone;
-    }
-    public setTelefone(telefone: string): void {
-        this.telefone = telefone;
-    }
-    public pesquisarRestaurante(nomeRestaurante: string): boolean {
-        if (this.nome.toLowerCase() === nomeRestaurante.toLowerCase()) {
-            console.log(`Restaurante encontrado: ${this.nome}`);
-            return true;
-        }
-        console.log(`Restaurante ${nomeRestaurante} não encontrado.`);
-        return false;
-    }
-
-    public verCardapio(): void {
-        //Exemplo de dados inseridos dentro do DATABESE
-        console.log(`Cardápio do restaurante ${this.nome}:`);
-        console.log("- Prato 1: R$30");
-        console.log("- Prato 2: R$45");
-        console.log("- Sobremesa: R$20");
-    }
-
-    public buscarPromocoes(): void {
-        console.log(`Promoções no restaurante ${this.nome}:`);
-        console.log("Refrigerantes FREE nas quintas-feiras.");
-    }
-
-    public filtrarPrecos(precoMaximo: number): boolean {
-        if (this.preco_faixa <= precoMaximo) {
-            console.log(`Restaurante ${this.nome} está dentro da faixa de preço: R$${this.preco_faixa}`);
-            return true;
-        }
-        console.log(`Restaurante ${this.nome} está fora da faixa de preço. Faixa: R$${this.preco_faixa}`);
-        return false;
-    }
-
-    public buscarCulinaria(culinariaBuscada: string): boolean {
-        if (this.culinaria.toLowerCase() === culinariaBuscada.toLowerCase()) {
-            console.log(`Restaurante ${this.nome} oferece culinária ${this.culinaria}`);
-            return true;
-        }
-        console.log(`Restaurante ${this.nome} não oferece culinária ${culinariaBuscada}.`);
-        return false;
-    }
-    public visualizarRestaurantes(): void {
-        console.log(`
-        Restaurante ID: ${this.id_restaurante}
-        Nome Restaurante: ${this.nome}
-        Culinarias: ${this.culinaria}
-        Endereço: ${this.endereco}
-        Preço De Faixa: ${this.preco_faixa}
-        Avaliação: ${this.avaliacao}
-        Telefone; ${this.telefone}
-        `);
-    }
-}
-
-export class Hoteis {
-    private id_hotel: number;
-    public nome: string;
-    public endereco: string;
-    public avaliacao: string;
-    public preco: number;
-    public data_hora: string
-    public armazenaHotel: []
-
-    constructor(id_hotel: number, nome: string, endereco: string, avaliacao: string, preco: number, data_hora: string) {
-        this.id_hotel = id_hotel;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.avaliacao = avaliacao;
+    public setPreco(preco: number): void {
         this.preco = preco;
-        this.data_hora = data_hora;
     }
-    public vizualizarHotel(): void {}
-    public buscarHotel(): void {}
-    public reservarQuarto(): void {}
+    public getDataAtividade(): string {
+        return this.data_atividade;
+    }
+    public setDataAtividade(data_atiividade: string): void {
+        this.data_atividade = data_atiividade;
+    }
+    public vizualizarAvaliacoes(): void { }
+    public avaliar(): void { }
 }
 
 export class Avaliacao {
     private id_avaliacao: number;
-    private usuario: Usuario;
+    private id_usuario: Usuario;
     public tipo_avaliacao: string;
     public avaliacao: string;
     public comentarios: string;
@@ -255,7 +162,7 @@ export class Avaliacao {
 
     constructor(id_avaliacao: number, usuario: Usuario, tipo_avaliacao: string, avaliacao: string, comentarios: string, data_hora: number) {
         this.id_avaliacao = id_avaliacao;
-        this.usuario = usuario;
+        this.id_usuario = usuario;
         this.tipo_avaliacao = tipo_avaliacao;
         this.avaliacao = avaliacao;
         this.comentarios = comentarios;
@@ -271,11 +178,11 @@ export class Avaliacao {
     }
 
     public getUsuario(): Usuario {
-        return this.usuario;
+        return this.id_usuario;
     }
 
     public setUsuario(usuario: Usuario): void {
-        this.usuario = usuario;
+        this.id_usuario = usuario;
     }
 
     public getTipoAvaliacao(): string {
@@ -311,7 +218,7 @@ export class Avaliacao {
     }
 
     public exibirDetalhes(): string {
-        return `Avaliação ID: ${this.id_avaliacao}\nUsuário: ${this.usuario}\nTipo de Avaliação: ${this.tipo_avaliacao}\nAvaliação: ${this.avaliacao}\nComentários: ${this.comentarios}\nData/Hora: ${this.data_hora}`;
+        return `Avaliação ID: ${this.id_avaliacao}\nUsuário: ${this.id_usuario}\nTipo de Avaliação: ${this.tipo_avaliacao}\nAvaliação: ${this.avaliacao}\nComentários: ${this.comentarios}\nData/Hora: ${this.data_hora}`;
     }
 
     public validarAvaliacao(): boolean {
