@@ -116,7 +116,7 @@ Esta tabela armazena informações sobre os usuários que utilizam o sistema.
 | `email`      | VARCHAR(100)| Email do usuário                     |
 | `senha`      | VARCHAR(255)| Senha criptografada                  |
 | `data_nasc`  | DATE        | Data de nascimento do usuário        |
-| `data_hora`  | TIMESTAMP   | Data e hora de criação do registro   |
+| `data_hora`  | dateb       | Data e hora de criação do registro   |
 
 ### Tabela: `Atividades`
 Esta tabela armazena detalhes das atividades que os usuários podem realizar durante as viagens.
@@ -140,7 +140,7 @@ Esta tabela contém as avaliações feitas pelos usuários sobre as atividades.
 | `id_atividade`  | INT          | Identificador da atividade         |
 | `avaliacao`     | DECIMAL(2,1) | Nota da avaliação (ex: 4.5)        |
 | `comentarios`   | TEXT         | Comentários adicionais do usuário  |
-| `data_hora`     | TIMESTAMP    | Data e hora da avaliação           |
+| `data_hora`     | date         | Data e hora da avaliação           |
 
 ### Tabela: `Sugestoes`
 Tabela para registrar sugestões de itens com base em atividades e destinos.
@@ -152,7 +152,7 @@ Tabela para registrar sugestões de itens com base em atividades e destinos.
 | `id_atividade`  | INT          | Identificador da atividade         |
 | `item`          | VARCHAR(100) | Nome do item sugerido              |
 | `descricao`     | TEXT         | Descrição do item                  |
-| `data_hora`     | TIMESTAMP    | Data e hora da sugestão            |
+| `data_hora`     | date         | Data e hora da sugestão            |
 
 ### Tabela: `Destinos`
 Esta tabela armazena os destinos para onde os usuários podem viajar.
