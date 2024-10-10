@@ -1,3 +1,4 @@
+// Object-Relational Mapping = Mapeamento Objeto-Relacional
 export let ask = require('readline-sync')
 
 export let armazenamentoGeral: any = []
