@@ -106,37 +106,65 @@ Para utilizar essas APIs externas, você precisará configurar chaves de API (AP
 
 ## 6. Modelo de Dados
 Defina as tabelas ou coleções que serão usadas no banco de dados.
+### Tabela: `Usuarios`
+Esta tabela armazena informações sobre os usuários que utilizam o sistema.
 
-### Tabela: Usuários
 | Campo      | Tipo        | Descrição                            |
 |------------|-------------|--------------------------------------|
-| id_usuario | INT         | Identificador único do usuário       |
-| nome       | VARCHAR(50) | Nome do usuário                      |
-| email      | VARCHAR(100)| Email do usuário                     |
-| senha      | VARCHAR(255)| Senha criptografada                  |
-| data_nasc  | DATE        | Data de nascimento do usuário        |
-| data_hora  | DATE        | Data e hora de criação do registro   |
+| `id_usuario` | INT         | Identificador único do usuário       |
+| `nome`       | VARCHAR(50) | Nome do usuário                      |
+| `email`      | VARCHAR(100)| Email do usuário                     |
+| `senha`      | VARCHAR(255)| Senha criptografada                  |
+| `data_nasc`  | DATE        | Data de nascimento do usuário        |
+| `data_hora`  | TIMESTAMP   | Data e hora de criação do registro   |
 
-### Tabela: Atividades
-| Campo         | Tipo         | Descrição                          |
-|---------------|--------------|------------------------------------|
-| id_atividade  | INT          | Identificador único da atividade   |
-| tipo_atividade| INT          | Nome da atividade                  |
-| descricao     | TEXT         | Descrição da atividade             |
-| endereco      | VARCHAR(100) | Local da atividade                 |
-| preco         | DECIMAL(10,2)| Preço da atividade                 |
-| data_atividade| DATE         | Data da atividade                  |
+### Tabela: `Atividades`
+Esta tabela armazena detalhes das atividades que os usuários podem realizar durante as viagens.
 
-### Tabela: Avaliações
-| Campo          | Tipo         | Descrição                          |
-|----------------|--------------|------------------------------------|
-| id_avaliacao   | INT          | Identificador único da avaliação   |
-| id_usuario     | INT          | Identificador do usuário           |
-| tipo_avaliacao | VARCHAR(100) | Tipo do item avaliado              |
-| avaliacao      | DECIMAL(2,1) | Avaliação do item                  |
-| comentarios    | TEXT         | Comentário do usuário              |
-| data_hora      | DATE         | Data de criação da avaliação       |
+| Campo           | Tipo         | Descrição                          |
+|-----------------|--------------|------------------------------------|
+| `id_atividade`  | INT          | Identificador único da atividade   |
+| `tipo_atividade`| VARCHAR(50)  | Nome da atividade                  |
+| `descricao`     | TEXT         | Descrição da atividade             |
+| `endereco`      | VARCHAR(100) | Local da atividade                 |
+| `preco`         | DECIMAL(10,2)| Preço da atividade                 |
+| `data_atividade`| DATE         | Data da atividade                  |
 
+### Tabela: `Avaliacoes`
+Esta tabela contém as avaliações feitas pelos usuários sobre as atividades.
+
+| Campo           | Tipo         | Descrição                          |
+|-----------------|--------------|------------------------------------|
+| `id_avaliacao`  | INT          | Identificador único da avaliação   |
+| `id_usuario`    | INT          | Identificador do usuário           |
+| `id_atividade`  | INT          | Identificador da atividade         |
+| `avaliacao`     | DECIMAL(2,1) | Nota da avaliação (ex: 4.5)        |
+| `comentarios`   | TEXT         | Comentários adicionais do usuário  |
+| `data_hora`     | TIMESTAMP    | Data e hora da avaliação           |
+
+### Tabela: `Sugestoes`
+Tabela para registrar sugestões de itens com base em atividades e destinos.
+
+| Campo           | Tipo         | Descrição                          |
+|-----------------|--------------|------------------------------------|
+| `id_sugestao`   | INT          | Identificador único da sugestão    |
+| `id_usuario`    | INT          | Identificador do usuário           |
+| `id_atividade`  | INT          | Identificador da atividade         |
+| `item`          | VARCHAR(100) | Nome do item sugerido              |
+| `descricao`     | TEXT         | Descrição do item                  |
+| `data_hora`     | TIMESTAMP    | Data e hora da sugestão            |
+
+### Tabela: `Destinos`
+Esta tabela armazena os destinos para onde os usuários podem viajar.
+
+| Campo           | Tipo         | Descrição                          |
+|-----------------|--------------|------------------------------------|
+| `id_destino`    | INT          | Identificador único do destino     |
+| `nome_destino`  | VARCHAR(100) | Nome do destino                    |
+| `descricao`     | TEXT         | Descrição do destino               |
+| `clima`         | VARCHAR(50)  | Clima predominante do destino      |
+| `pais`          | VARCHAR(50)  | País do destino                    |
+| `cidade`        | VARCHAR(50)  | Cidade do destino                  |
 ---
 
 ## 7. Protótipos Visuais
