@@ -140,7 +140,7 @@ Esta tabela contém as avaliações feitas pelos usuários sobre as atividades.
 | `id_atividade`  | INT          | Identificador da atividade         |
 | `avaliacao`     | DECIMAL(2,1) | Nota da avaliação (ex: 4.5)        |
 | `comentarios`   | TEXT         | Comentários adicionais do usuário  |
-| `data_hora`     | date         | Data e hora da avaliação           |
+| `data_hora`     | DATE         | Data e hora da avaliação           |
 
 ### Tabela: `Sugestoes`
 Tabela para registrar sugestões de itens com base em atividades e destinos.
@@ -152,7 +152,7 @@ Tabela para registrar sugestões de itens com base em atividades e destinos.
 | `id_atividade`  | INT          | Identificador da atividade         |
 | `item`          | VARCHAR(100) | Nome do item sugerido              |
 | `descricao`     | TEXT         | Descrição do item                  |
-| `data_hora`     | date         | Data e hora da sugestão            |
+| `data_hora`     | DATE         | Data e hora da sugestão            |
 
 ### Tabela: `Destinos`
 Esta tabela armazena os destinos para onde os usuários podem viajar.
