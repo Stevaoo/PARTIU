@@ -1,7 +1,8 @@
-// Object-Relational Mapping = Mapeamento Objeto-Relacional
-export let ask = require('readline-sync')
+/export let ask = require('readline-sync')
 
 export let armazenamentoGeral: any = []
+
+//Object-Relational Mapping = Mapeamento Objeto-Relacional
 
 export class Usuario {
     private id_usuario: number;
@@ -22,30 +23,42 @@ export class Usuario {
         this.armazenaUser = []
     }
     public entrarConta(): void {
-        let nome = ask.question("Insira o Nome do Titular da conta: ")
-        let senha = ask.questionInt("Insira a Senha da conta:  ")
-        if (nome === armazenamentoGeral && senha === armazenamentoGeral) {
-            console.log("Entrando na conta...");
-        } else if (nome === armazenamentoGeral && senha !== armazenamentoGeral) {
-            console.log("Senha Incorreta!!!");
-        } else if (nome !== armazenamentoGeral && senha === armazenamentoGeral) {
-            console.log("Nome Incorreto!!!");
-        } else {
-            console.log("Nome ou Senha Incorreto!");
-        }
+    let nome = ask.question("Insira o Nome do Titular da conta: ")
+    let senha = ask.questionInt("Insira a Senha da conta:  ")
+    
+    const usuario = armazenamentoGeral.find((user: any) => user.nome === nome && user.senha === senha);
+    
+    if (usuario) {
+        console.log("Entrando na conta...");
+    } else {
+        console.log("Nome ou Senha Incorreto!");
+    }
+}
+
+public criarConta(): void {
+    let perguntaNome: string = ask.question('Nome: ')
+    let perguntaEmail = ask.question('Email: ')
+    let perguntaSenha = ask.question('Senha: ')
+    let perguntaConfirmaSenha = ask.question('Confirmar senha: ')
+    let perguntaNasc = ask.question('Data de Nascimento (YYYY-MM-DD): ')
+
+    const hoje = new Date();
+    const nascimento = new Date(perguntaNasc);
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+    const mes = hoje.getMonth() - nascimento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+        idade--;
     }
 
-    public criarConta(): void {
-        let perguntaNome: string = ask.question('Nome: ')
-        let perguntaEmail = ask.question('Email: ')
-        let perguntaSenha = ask.question('Senha: ')
-        let perguntaConfirmaSenha = ask.question('Confirmar senha: ')
-        let perguntaNasc = ask.question('Data de Nascimento: ')
-
-        if (perguntaSenha === perguntaConfirmaSenha || perguntaNasc >= 18) {
-            armazenamentoGeral.push(perguntaNome, perguntaEmail, perguntaSenha)
-        }
+    if (perguntaSenha === perguntaConfirmaSenha && idade >= 18) {
+        armazenamentoGeral.push({ nome: perguntaNome, email: perguntaEmail, senha: perguntaSenha, data_nasc: perguntaNasc });
+        console.log("Conta criada com sucesso!");
+    } else {
+        console.log("Erro na criação da conta. Verifique os dados e tente novamente.");
     }
+}
+
 
     public removerConta(): void {
         let nome = ask.question("Insira o Nome do Titular da conta que deseja remover: ");
@@ -227,5 +240,125 @@ export class Avaliacao {
             return true;
         }
         return false;
+    }
+}
+
+export class SugestaoDeItens {
+    private destino: string;
+    private atividades: string[];
+    private sugestoesPadrao: Map<string, string[]>; // Sugestões padrão para atividades
+    private sugestaoPersonalizada: SugestaoPersonalizada;
+
+    constructor(destino: string, atividades: string[]) {
+        this.destino = destino;
+        this.atividades = atividades;
+        this.sugestoesPadrao = new Map<string, string[]>();
+        this.sugestaoPersonalizada = new SugestaoPersonalizada();
+
+        // Sugestões padrão para atividades
+        this.sugestoesPadrao.set("Praia", ["Protetor solar", "Óculos de sol", "Toalha"]);
+        this.sugestoesPadrao.set("Montanha", ["Bota de trilha", "Jaqueta corta-vento", "Garrafa de água"]);
+        this.sugestoesPadrao.set("Natação", ["Sunga", "Maiô", "Touca de natação"]);
+        this.sugestoesPadrao.set("Passeio", ["Tênis confortável", "Câmera", "Chapéu"]);
+    }
+
+    // Método para filtrar sugestões de itens por tipo de atividade
+    public filtrarSugestoesPorAtividade(atividade: string): string[] {
+        const sugestoes = this.sugestoesPadrao.get(atividade);
+        if (sugestoes) {
+            console.log(`Sugestões padrão para a atividade "${atividade}": ${sugestoes.join(", ")}`);
+            return sugestoes;
+        } else {
+            console.log(`Nenhuma sugestão padrão encontrada para a atividade "${atividade}".`);
+            return [];
+        }
+    }
+
+    // Método para exibir todas as sugestões para as atividades do destino
+    public exibirSugestoesPadrao(): void {
+        console.log(`Sugestões de itens para o destino "${this.destino}":`);
+        this.atividades.forEach(atividade => {
+            const sugestoes = this.sugestoesPadrao.get(atividade);
+            if (sugestoes) {
+                console.log(`Atividade "${atividade}": ${sugestoes.join(", ")}`);
+            }
+        });
+    }
+
+    // Método para adicionar sugestões personalizadas do usuário
+    public adicionarSugestaoPersonalizada(atividade: string, item: string): void {
+        this.sugestaoPersonalizada.adicionarSugestao(this.destino, atividade, item);
+    }
+
+    // Método para exibir sugestões personalizadas do usuário
+    public exibirSugestoesPersonalizadasPorAtividade(atividade: string): void {
+        this.sugestaoPersonalizada.exibirSugestoesPorAtividade(this.destino, atividade);
+    }
+}
+
+export class SugestaoPersonalizada {
+    private sugestoesUsuario: Map<string, Map<string, string[]>>; // Estrutura para armazenar atividades e itens associados por destino
+
+    constructor() {
+        this.sugestoesUsuario = new Map<string, Map<string, string[]>>();
+    }
+
+    // Método para adicionar ou atualizar sugestões de itens para uma atividade em um destino
+    public adicionarSugestao(destino: string, atividade: string, item: string): void {
+        if (!this.sugestoesUsuario.has(destino)) {
+            this.sugestoesUsuario.set(destino, new Map<string, string[]>());
+        }
+
+        const atividadesDestino = this.sugestoesUsuario.get(destino);
+        if (atividadesDestino) {
+            if (!atividadesDestino.has(atividade)) {
+                atividadesDestino.set(atividade, []);
+            }
+            atividadesDestino.get(atividade)?.push(item);
+            console.log(`Sugestão de item "${item}" adicionada para a atividade "${atividade}" no destino "${destino}".`);
+        }
+    }
+
+    // Método para remover um item específico de uma sugestão para uma atividade e destino
+    public removerSugestao(destino: string, atividade: string, item: string): void {
+        const atividadesDestino = this.sugestoesUsuario.get(destino);
+        if (atividadesDestino && atividadesDestino.has(atividade)) {
+            const itens = atividadesDestino.get(atividade);
+            if (itens) {
+                const index = itens.indexOf(item);
+                if (index !== -1) {
+                    itens.splice(index, 1);
+                    console.log(`Item "${item}" removido da atividade "${atividade}" no destino "${destino}".`);
+                } else {
+                    console.log(`Item "${item}" não encontrado na atividade "${atividade}".`);
+                }
+            }
+        } else {
+            console.log(`Atividade "${atividade}" no destino "${destino}" não encontrada.`);
+        }
+    }
+
+    // Método para exibir sugestões filtradas por atividade em um destino
+    public exibirSugestoesPorAtividade(destino: string, atividade: string): void {
+        const atividadesDestino = this.sugestoesUsuario.get(destino);
+        if (atividadesDestino && atividadesDestino.has(atividade)) {
+            const itens = atividadesDestino.get(atividade);
+            console.log(`Sugestões para a atividade "${atividade}" no destino "${destino}": ${itens?.join(", ")}`);
+        } else {
+            console.log(`Nenhuma sugestão encontrada para a atividade "${atividade}" no destino "${destino}".`);
+        }
+    }
+
+    // Método para exibir todas as sugestões para um destino
+    public exibirSugestoes(destino: string): void {
+        const atividadesDestino = this.sugestoesUsuario.get(destino);
+        if (atividadesDestino) {
+            console.log(`Sugestões personalizadas para o destino "${destino}":`);
+            atividadesDestino.forEach((itens, atividade) => {
+                console.log(`Atividade "${atividade}": ${itens.join(", ")}`);
+            });
+        } else {
+            console.log(`Nenhuma sugestão encontrada para o destino "${destino}".`);
+        }
     }
 }
